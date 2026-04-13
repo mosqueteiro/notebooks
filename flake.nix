@@ -32,8 +32,6 @@
               pkgs.zlib
             ]
           }:$LD_LIBRARY_PATH"
-
-          echo "Ready to run 'uv run marimo edit'"
         '';
       };
     };
