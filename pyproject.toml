@@ -1,0 +1,10 @@
+[project]
+name = "notebooks"
+version = "0.1.0"
+description = "Collection of Notebooks"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "basedpyright>=1.39.0",
+    "marimo[recommended]>=0.23.1",
+]
