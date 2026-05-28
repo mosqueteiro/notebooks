@@ -19,6 +19,7 @@
           pkgs.python314 # Nix-patched Python
           pkgs.stdenv.cc.cc.lib # Often needed for Python wheels that use C++
           pkgs.zlib # Common dependency for data science wheels
+          pkgs.jq
         ];
 
         shellHook = ''
