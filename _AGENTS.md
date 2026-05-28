@@ -6,25 +6,16 @@ This is a Python project using:
 - **Python 3.14+** (see `.python-version`)
 - **uv** for package management
 - **marimo** for notebook development
+- **basedpyright** for type checking (integrated with marimo LSP)
 - **Nix** flake for reproducible devshell (see `flake.nix`)
 
 ## Development Environment
 
-### Setup
-```bash
-# Option 1: Use Nix devshell (recommended)
-nix develop
+Dev environment should setup upon changing to this directory through direnv.
 
-# Option 2: Use uv venv
-uv sync
-source .venv/bin/activate
-```
-
-### Running the Project
+### Running a notebook
 ```bash
-python main.py
-marimo run main.py   # if using marimo
-marimo edit          # open notebook editor
+uv marimo edit          # open notebook editor
 ```
 
 ## Build/Lint/Test Commands
@@ -49,7 +40,13 @@ ruff check path/to/file.py   # lint single file
 ruff format .               # format code
 ```
 
-### If you add type checking with mypy:
+### Type checking with basedpyright (already installed):
+```bash
+basedpyright .                 # type check project
+basedpyright path/to/file.py   # type check single file
+```
+
+### If you add mypy:
 ```bash
 uv add --dev mypy
 mypy .                      # type check
@@ -129,7 +126,16 @@ def process(data: list[int]) -> int:
 
 - Notebook files use `.py` extension with marimo framework
 - Edit with `marimo edit`
-- Run with `marimo run <filename>`
+- Run with `marimo run `
+
+### Type Checking in Marimo
+
+This project includes basedpyright. To enable it in marimo:
+
+1. Open marimo (`uv run marimo edit`)
+2. Go to **Settings** > **Language Servers** > enable **basedpyright**
+
+Note: Configuration in `pyproject.toml` (e.g., `[tool.basedpyright]`) is not yet applied by marimo. Configure LSP settings via marimo's UI instead.
 
 ## Project Structure
 
