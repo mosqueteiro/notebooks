@@ -5,8 +5,10 @@ description = "Collection of Notebooks"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "beautifulsoup4>=4.15.0",
     "marimo[mcp,recommended]>=0.23.1",
     "numpy>=2.4.4",
+    "polars[pandas]>=1.44.2",
 ]
 
 [dependency-groups]
