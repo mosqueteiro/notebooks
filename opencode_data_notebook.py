@@ -41,6 +41,17 @@ def _():
 @app.cell(hide_code=True)
 def _():
     mo.md(r"""
+    - [Opencode AI Model Usage Rankings](https://opencode.ai/data/)
+    - [Opencode Model Pricing](https://opencode.ai/v2/docs/console/models/#pricing)
+    - [Opencode Go Usage Limits](https://opencode.ai/v2/docs/console/go/#usage-limits)
+    - [Opencode Console](https://opencode.ai/console/)
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _():
+    mo.md(r"""
     ## OpenCode Zen & Go pricing
 
     Pricing is sourced from two places, preferring the machine-readable API where possible:
@@ -355,7 +366,7 @@ def _(go_pricing_df, top_n_models):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(
     go_combined_df,
     go_combined_display_df,
